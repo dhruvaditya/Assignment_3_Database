@@ -1,25 +1,25 @@
-1. SELECT name FROM users;
+1. SELECT name FROM twitter_user;
 
-2. SELECT * FROM tweets WHERE user_id = :user_id ORDER BY timestamp DESC;
+2. SELECT * FROM tweet WHERE user_id = :user_id ORDER BY timestamp DESC;
 
-3.SELECT COUNT(*) AS like_count FROM likes WHERE tweet_id = :tweet_id;
+3.SELECT COUNT(*) AS like_count FROM likes WHERE tweet_id = :leia_123;
 
-4.SELECT COUNT(*) AS retweet_count FROM retweets WHERE tweet_id = :tweet_id;
+4.SELECT COUNT(*) AS retweet_count FROM retweets WHERE tweet_id = :vad_13;
 
-5.SELECT COUNT(*) AS comment_count FROM comments WHERE tweet_id = :tweet_id;
+5.SELECT COUNT(*) AS comment_count FROM comments WHERE tweet_id = :obi_1234;
 
 6.SELECT u.name
-FROM users u
+FROM twitter_user u
 JOIN retweets r ON u.user_id = r.user_id
-WHERE r.tweet_id = :tweet_id;
+WHERE r.tweet_id = :vad_13;
 
 7.SELECT c.content, u.name
 FROM comments c
 JOIN users u ON c.user_id = u.user_id
-WHERE c.tweet_id = :tweet_id;
+WHERE c.tweet_id = :vad_13;
 
 8.SELECT t.content, u.name
 FROM tweets t
 JOIN users u ON t.user_id = u.user_id
-WHERE t.user_id IN (SELECT following_user_id FROM follows WHERE follower_user_id = :my_user_id)
+WHERE t.user_id IN (SELECT following_user_id FROM follows WHERE follower_user_id = :user_1)
 ORDER BY t.timestamp DESC;
